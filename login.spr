@@ -1,0 +1,551 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+	
+<meta http-equiv="X-UA-Compatible" content="IE=9" >
+
+<meta name="pageTitle" content="Intland Codebeamer" />
+<title></title>
+
+<meta name="description" content="codeBeamer is the award winning Collaborative Application Lifecycle Management (ALM) solution for distributed software development. It provides project management, wikis and knowledge management, document management, task, requirement and defect management, configuration management (ITIL), continuous integration, version control, source code analysis and forums through a single and secure environment."/>
+<meta name="keywords" content="git, mercurial, subversion, svn, bug tracking software, bug tracker software, issue tracking software, issue tracker software, document management software, wiki software, change management software, version control, distributed version control, distributed revision control, alm, forge, codebeamer, code beamer"/>
+<link rel="icon" href="/cb/images/favicon.ico?CB_VERSION=6.1.RC2-201301160954" type="image/png" />
+
+<script type="text/javascript">
+	if (typeof console == "undefined") {
+		console = {
+			log: function(any) { /*alert(any); */ }
+		};
+	}
+	var contextPath = '/cb';
+	// current language
+	var language = 'en';
+	var country = '';
+	console.log("Javascript is using localization: language:" + language +" (resource-language:en), country:" + country);
+	var developmentMode = false;
+	var serverStartupTime = 1358327259393;	// i18n js uses this to refresh i18n caches
+</script>
+
+<link rel="stylesheet" href="/cb/wro/all.css?CB_VERSION=6.1.RC2-201301160954" type="text/css" media="all" />
+	
+<link rel="stylesheet" href="/cb/wro/newskin.css?CB_VERSION=6.1.RC2-201301160954" type="text/css" media="all" />
+<script type="text/javascript" src="/cb/wro/all.js?CB_VERSION=6.1.RC2-201301160954"></script>
+
+<script type="text/javascript">
+window.jsErrors = [];
+window.onerror = function(errorMessage) {
+  window.jsErrors[window.jsErrors.length] = errorMessage;
+}
+</script>
+
+<!-- jstree will use this: TODO: really needed? -->
+
+<style id="jstree-stylesheet"></style>
+
+<!-- IE specific style sheet included both IE6/IE7-->
+<!--[if lt IE 8]>
+	<link rel="stylesheet" href="/cb/stylesheet/CB-Style-ie.css?CB_VERSION=6.1.RC2-201301160954" type="text/css" media="all" />
+<![endif]-->
+<!--[if lt IE 8]>
+	<script type="text/javascript" src="/cb/js/ie_zindex_fixes.js?CB_VERSION=6.1.RC2-201301160954"></script>
+<![endif]-->
+<!-- IE6 specific style sheet is included only for IE6 -->
+<!--[if lt IE 7]>
+	<link rel="stylesheet" href="/cb/stylesheet/cb-style-ie6.cssv?CB_VERSION=6.1.RC2-201301160954" type="text/css" media="all" />
+<![endif]-->
+
+<!-- Using the user specific date-format in Calendar component -->
+
+<script type="text/javascript">
+// fixing JSPwikis' collapsable shows a bullet on IE by default
+Collapsable.bullet.innerHTML = "&nbsp;";
+</script>
+
+<script type="text/javascript">
+		$(document).ready(function () {
+			layoutScripts.init(false, 'Collapse/expand header', 'Search...');
+		});
+	</script>
+	</head>
+<body class="FF yui-skin-cb newskin workspaceModule loginModule  " bgcolor="white" link="#000000" vlink="#000000" alink="#000000" topmargin="0" leftmargin="0" marginwidth="0" marginheight="0">
+
+<div id="overlayMessageBoxContainer" >
+	<div id="overlayMessageBox" class="notification"></div>
+</div>
+
+<!--[if lt IE 8]>
+	<script src="/cb/js/browserNotSupported.js"></script>
+	<script>
+		$(function() {browserNotSupportedWarning.show("<h3>Did you know that your Internet Explorer is out of date?</h3>To get the best possible experience we recommend that you upgrade to a newer version or other web browser.<br/>The list of supported browsers are displayed below, just click on the link to get to the download page.", "Don't show this message any more...");})
+	</script>
+<![endif]-->
+
+<div class="ui-layout-north" style="overflow:hidden;border:0;" id="northPane">
+	<div id="headerPane">
+		
+<div style="width: 100%;" class="noPrint">
+	<a href="http://www.intland.com" style="text-decoration: none;" class="logoLink">
+		<img class="logo" src="/cb/images/newskin/header/cblogo-xl.png" 
+			 width="215" 
+			 height="43"  
+			border="0" alt="http://www.intland.com" title="Visit www.intland.com" />
+	</a>
+	<div id="toprightmenuContainer" class="mainmenu">
+			<div class="toprightmenu">
+
+		<a href="/cb/login.spr?targetURL=/login.spr" class='mainmenu'  permissions='~' >Login</a>
+			
+				| <a class="mainmenu" onclick="launch_url('https://codebeamer.com/cb/wiki/8798'); return false;" href="https://codebeamer.com/cb/wiki/8798">Help</a>
+				
+					| <span title="Choose the language" class="languageChooser">
+						<span id='actionMenu896388539' class='inlinemenuTrigger ' ><a href='#'>
+							<a href="#">English</a>
+						</a><img src='/cb/images/space.gif' class='menuArrowDown' /></span><div class='yuimenu inlinemenu' id='actionMenu896388539popup'><div class='bd'><ul class='first-of-type'><li class="yuimenuitem" style="margin: 0; padding: 0;"><a href="/cb/selectLanguage.spr?language=de">Deutsch</a></li><li class="yuimenuitem" style="margin: 0; padding: 0;"><a href="/cb/selectLanguage.spr?language=zh">&#20013;&#25991;</a></li><li class="yuimenuitem" style="margin: 0; padding: 0;"><a href="/cb/selectLanguage.spr?language=zh_CN">&#31616;&#20013;</a></li><li class="yuimenuitem" style="margin: 0; padding: 0;"><a href="/cb/selectLanguage.spr?language=zh_TW">&#32321;&#20013;</a></li><li class="yuimenuitem" style="margin: 0; padding: 0;"><a href="/cb/selectLanguage.spr?language=ko">&#54620;&#44397;&#50612;</a></li></ul></div></div>
+					</span>
+			
+					<div id="globalSearchBox">
+						<form action="/cb/search.spr" method="get">
+							<span class="">
+								<input type="text" name="filter" id="searchFilter" class="searchFilterBox"
+										value=""
+										title="Enter full text search pattern here" size="15" maxlength="80" 
+								/><a class="mainmenu advancedSearchButton" href="/cb/advancedSearch.spr">Advanced</a>
+
+							<script type="text/javascript">
+									applyHintInputBox("#searchFilter", "Search...");
+								</script>
+							</span>
+						</form>
+					</div>
+				
+			</div>
+	</div>
+
+	<div class="headerCenter">
+		<span id="slogan"><strong>codeBeamer ALM </strong> <br></span>
+		
+	</div>
+</div>
+<div style="clear:both;"></div>
+
+	</div>
+
+	<div id="toolmenuContainer">
+		
+<!-- toolbar start -->
+<div class="toolbar toolbar_workspace_selected" ><table class="tab" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td class="toolbarTab   currentTabCenter" ><span id='login_ToolBarItem' class='inlinemenuTrigger ' ><a href='#'><a href="/cb/login.spr">Login</a></a></span></td>
+<td class="toolbarTab  currentTabPost currentTabPostCenter" ><span id='project_browser_ToolBarItem' class='inlinemenuTrigger ' ><a href='#'><a href="/cb/listProjects.spr">Projects</a></a><img src='/cb/images/space.gif' class='menuArrowDown' /></span><div class='yuimenu inlinemenu' id='project_browser_ToolBarItempopup'><div class='bd'><ul class='first-of-type'><li class='yuimenuitem'><a class='yuimenuitemlabel ' href='/cb/listProjects.spr'>My Projects</a></li><li class='yuimenuitem'><a class='yuimenuitemlabel ' href='/cb/viewWorkingSets.spr'>My Working Sets</a></li><li class='yuimenuitem'><a class='yuimenuitemlabel ' href='/cb/listProjects.spr?displayAllProjects=on'>Browse Projects</a></li></ul></div></div></td>
+<td class='toolbarIconContainer'><div id='headerTogglerContainer'></div><div id="searchMenuContainer"><div id='searchMenu' class='yuimenubar '><div class='bd'><ul class='first-of-type'><li class='yuimenubaritem first-of-type'><span class='toolbarTopMenu yuimenubaritemlabel' href='#'><a href="#" class='withicon' ><img class="tableIcon" src="/cb/images/tree_search_d.png" style=""/></a></span><div class='yuimenu ' id='searchMenupopup'><div class='bd'><ul class='first-of-type'><li><form action="/cb/search.spr" method="get" class="searchMenuForm" style="background:#f5f5f5 !important;"><input type="text" name="filter" id="searchFilterOnPopup" value="" title="Enter full text search pattern here" size="15" maxlength="80" class="inputboxWithHint" style="width:150px;"><input type="submit" class="button" value="GO"/></form></li></ul></div></div></li></ul></div></div></div><div id="userLinkContainer"><div id='userEmailMenu' class='yuimenubar '><div class='bd'><ul class='first-of-type'><li class='yuimenubaritem first-of-type'><span class='toolbarTopMenu yuimenubaritemlabel' href='/userdata/2853'><a href="/cb/userdata/2853" class='userLink' >anonymous</a><img src='/cb/images/space.gif' class='menuArrowDown' /></span><div class='yuimenu ' id='userEmailMenupopup'><div class='bd'><ul class='first-of-type'><li class='yuimenuitem'><a class='yuimenuitemlabel ' href='/cb/history.do' onclick="inlinePopup.show('/cb/history.do'); return false;">History</a></li><li class='yuimenuitem'><a class='yuimenuitemlabel ' href='/cb/logout.spr?targetURL=/login.spr'>Logout</a></li></ul></div></div></li></ul></div></div></div></td></tr>
+</table>
+</div>
+<!-- toolbar end -->
+
+	</div>
+</div>
+
+	<div class="ui-layout-center" style="border:0;">
+		<div class="contentArea">
+
+<!-- 
+<pre class="debug">
+globalMessagesAlreadyIncluded: 
+</pre>
+-->
+<div class="infoMessages invisible"
+	id="globalMessages" >
+		
+			<div class="error invisible" title="Error" >
+				<ul>
+					
+				</ul>
+			</div>
+		
+			<div class="warning invisible" title="Warning" >
+				<ul>
+					
+				</ul>
+			</div>
+		
+			<div class="information invisible" title="Information" >
+				<ul>
+					
+				</ul>
+			</div>
+		
+</div>				
+					
+<meta name="decorator" content="main"/>
+<meta name="module" content="login"/>
+<meta name="moduleCSSClass" content="newskin workspaceModule loginModule"/>
+
+<div class="actionMenuBar "  >
+	
+<table border="0" cellpadding="0" cellspacing="0" class="rightAlign actionMenuBarContent" style="">
+	<tr>
+		<td class="rightAlignCell " >
+			<div class="actionMenuBarIcon" ></div>
+		</td>
+			<td class="rightAlignCell "  >
+	Login
+			</td>
+	
+		<td class="rightAlignCell rightAligned "  >
+			
+		</td>
+	</tr>
+</table>
+	<div style="clear:both;" ></div>
+</div>
+
+<table style="margin-top:15px;margin-left:15px;" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td style="vertical-align: top;">
+			
+<SCRIPT LANGUAGE="JavaScript" type="text/javascript">
+<!-- Hide script from old browsers
+
+$(document).ready(function() {
+	$("#user").focus();
+});
+
+//-->
+</SCRIPT>
+
+<form id="command" action="/cb/login.spr" method="post">
+
+<div class="infoMessages invisible"
+	 >
+		
+			<div class="error invisible" title="Error" >
+				<ul>
+					
+				</ul>
+			</div>
+		
+			<div class="warning invisible" title="Warning" >
+				<ul>
+					
+				</ul>
+			</div>
+		
+			<div class="information invisible" title="Information" >
+				<ul>
+					
+				</ul>
+			</div>
+		
+</div>
+
+<table class="loginBox">
+
+	<tr>
+		<td nowrap class="topTD">Account</td>
+		<td><br/></td>
+	</tr>
+
+	<tr>
+		<td colspan="2"><input id="user" name="user" class="loginTextField" tabindex="0" type="text" value=""/></td>
+	</tr>
+
+	<tr>
+		<td nowrap>Password</td>
+		<td nowrap align="center">
+			<a href="" tabindex="2"><small>Forgot your password?</small></a>
+		</td>
+	</tr>
+
+	<tr>
+		<td colspan="2"><input id="password" name="password" class="loginTextField" type="password" value=""/></td>
+	</tr>
+
+	
+		<tr>
+			<td nowrap>
+				<input id="remember" name="remember" type="checkbox" value="true"/><input type="hidden" name="_remember" value="on"/>
+				<label for="remember">Remember me</label>
+			</td>
+			<td><br/></td>
+		</tr>
+	
+
+	<tr style="margin-top: 5px;">
+		<td nowrap>
+			
+			<input type="submit" class="button" name="login" title="SSL-Login" value="Login"/>
+			
+		</td>
+		<td><br/></td>
+	</tr>
+
+	<tr>
+		<td colspan="2" class="hrTD"><hr></td>
+	</tr>
+
+				<tr>
+					<td colspan="2" nowrap class="regTD">
+						<a href="/cb/createUser.spr">Not a Member yet? Register now!</a>
+					</td>
+				</tr>
+				<tr>
+		<td class="socialTD" nowrap="nowrap" colspan="2">
+			<table class="rightAlign socialTable">
+				<tr class="socialTR">
+					<td>
+						Login with
+					</td>
+					<td>
+						
+		<!-- evaluate body to get the fragment -->
+		
+<div id="fb-root"></div>
+<script type="text/javascript" src="https://connect.facebook.net/en_US/all.js"></script>
+<script type="text/javascript">
+	try {
+	    FB.init();
+	} catch (ex) {
+		console.log("Error loading Facebook api: " + ex);
+		// hiding everything depends on Facebook's availability
+		$(".facebookDependentContent").hide();
+	}
+</script>
+
+<img class="socialLogo" src='/cb/images/newskin/item/facebook-icon.png'/>
+<input type="submit" class="button socialButton" name="login" value="Facebook" onclick="$('#facebookLoginButton').click();" />
+						
+					</td>
+					<td class="googleTD">
+						
+		<!-- evaluate body to get the fragment -->
+		
+<img class="socialLogo" src='/cb/images/newskin/item/google-icon.png'/>
+<input type="submit" class="button socialButton" name="login" value="Google" onclick="$('#googleLogin').submit();" />
+
+						
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+
+</form>
+		</td>
+		<td style="vertical-align: top; padding-left: 20px;"><span class='wikiContent'><table border='1' class='wikitable' style="border:none; border-spacing:0px;" > 
+<tr>
+<td style="vertical-align:top; padding:5px; border:none; width:50%; padding-right:20px;"><span style="font-size:150%; font-weight:bold;"> What is codeBeamer.com? </span> <br />
+<br />
+codeBeamer.com is a web site operated by <a class="external" href="http://www.intland.com">Intland Software</a><img class="outlink" src="/cb/images/out.png" alt="" />. This is the primary <b>demo instance of the <a class="external" href="http://www.intland.com/products/cb/overview.html">codeBeamer</a><img class="outlink" src="/cb/images/out.png" alt="" /> software product</b>.<br />
+<br />
+codeBeamer is the award winning Collaborative Requirements Management (RM) and Application Lifecycle Management (ALM) solution for distributed software development.
+codeBeamer provides project management, wikis and knowledge management, document management, task, requirement and defect management, configuration management (ITIL), continuous integration, version control, source code analysis and forums through a single and secure environment. It makes software development more collaborative, transparent and productive.<br />
+<br />
+Be impressed by codeBeamer's Top 7 techniques for efficient <br />
+Requirements Management!<br />
+<br />
+<iframe width="420" height="315" src="http://www.youtube.com/embed/JQB7K1ih1qg" frameborder="0" allowfullscreen></iframe> <br />
+<br />
+Watch this short video to get a quick understanding of codeBeamer ALM.<br />
+<br />
+<iframe width="420" height="315" src="http://www.youtube.com/embed/mkCPPZGRAas" frameborder="0" allowfullscreen></iframe> <br />
+<br />
+<span style="font-size:150%; font-weight:bold;"> Interesting, I want to know more! </span> <br />
+<br />
+These are probaly the best starting points for learning:
+<ul><li> <a class="external" href="http://www.intland.com">Intland web site</a><img class="outlink" src="/cb/images/out.png" alt="" /> - information on the company behind codeBeamer, with customer stories, news, <b>buying and licensing</b> and such. 
+</li><li> <a class="external" href="http://blogs.intland.com">Intland blog</a><img class="outlink" src="/cb/images/out.png" alt="" /> - colorful posts from the collaboration space. Tutorials, user stories, announcements.
+</li><li> <a class="external" href="http://www.intland.com/products/download.html">Download codeBeamer</a><img class="outlink" src="/cb/images/out.png" alt="" /> - you can <b>download the product for free</b>. This is not a trial: there is no expiration date.</li></ul></td>
+<td style="vertical-align:top; padding:5px; border:none; border-left:1px solid #DDD; padding-left:20px;"><div style="background-color:#E5ECF9; border-top: 0px solid #3366CC; padding:15px;">
+<span style="font-size:150%; font-weight:bold;"> Shortcuts </span> <br />
+<br />
+<b><a class="external" href="https://codebeamer.com/cb/project/CB">codeBeamer Knowledge Base</a><img class="outlink" src="/cb/images/out.png" alt="" /></b> - learn about codeBeamer in these wiki pages.<br />
+<br />
+<b><a class="external" href="https://codebeamer.com/cb/proj/doc.do?proj_id=37">codeBeamer Downloads</a><img class="outlink" src="/cb/images/out.png" alt="" /></b> - download codeBeamer from this directory.<br />
+<br />
+<b><a class="external" href="http://www.javaforge.com/project/CBES">codeBeamer Eclipse Studio</a><img class="outlink" src="/cb/images/out.png" alt="" /></b> - <span style="color: red;" class="red"><b>NEW!</b> </span> take your code, issues, work offline with this free Eclipse plugin. <br />
+<br />
+<b><a class="external" href="http://www.javaforge.com/project/HGE">HgEclipse</a><img class="outlink" src="/cb/images/out.png" alt="" /></b> - bring the power of the Mercurial Distributed Version Control System to Eclipse, for free.
+<br />
+</div>
+<br />
+<br />
+<span style="font-size:150%; font-weight:bold;"> Featured Projects on codeBeamer.com </span> <br />
+<br />
+<b><a class="external" href="https://codebeamer.com/cb/project/CB">codeBeamer Knowledge Base</a><img class="outlink" src="/cb/images/out.png" alt="" /></b> - This is your <b>number one source of information on the codeBeamer product</b>, maintained by Intland Software and the user community. It includes <a class="external" href="https://codebeamer.com/cb/wiki/8798">user's guide</a><img class="outlink" src="/cb/images/out.png" alt="" />, <a class="external" href="https://codebeamer.com/cb/wiki/8797">system admin's guide</a><img class="outlink" src="/cb/images/out.png" alt="" />, <a class="external" href="https://codebeamer.com/cb/wiki/18829">installation &amp; configuration guide</a><img class="outlink" src="/cb/images/out.png" alt="" />, <a class="external" href="https://codebeamer.com/cb/wiki/18830">developer's guide</a><img class="outlink" src="/cb/images/out.png" alt="" /> and a lot more.<br />
+Start reading <a class="external" href="https://codebeamer.com/cb/project/CB">here</a><img class="outlink" src="/cb/images/out.png" alt="" /> right now!<br />
+<br />
+<b><a class="external" href="https://codebeamer.com/cb/project/PARTICIPAT">Participate Knowledge Base</a><img class="outlink" src="/cb/images/out.png" alt="" /></b> -  This is your <b>number one source of information on the Participate product</b>, maintained by Intland Software and the user community. This is fairly limited at the moment, we are in the midst of populating content.<br />
+<br />
+<b><a class="external" href="https://codebeamer.com/cb/project/LABS">codeBeamer Labs</a><img class="outlink" src="/cb/images/out.png" alt="" /></b> - A collection of our side projects, such as <a class="external" href="https://codebeamer.com/cb/wiki/18927">call center integration</a><img class="outlink" src="/cb/images/out.png" alt="" />, for example. If you are looking for more current projects, you should have a look at the <a class="external" href="http://javaforge.com/listProjects.spr">projects at JavaForge</a><img class="outlink" src="/cb/images/out.png" alt="" />.<br />
+<br />
+<br />
+<span style="font-size:150%; font-weight:bold;"> Intland blog </span> <br />
+<br />
+<div class="wikichartbox " 				>
+	<table>
+    	<thead>
+			<tr><th><a href="http://www.intland.com">Intland</a> - Feed</th></tr>
+		</thead>
+    	<tbody>
+        	        			<tr class="even " valign="top">
+        			<td class="separator">
+        				    					    						
+    					        			</td>
+        			</tr>
+        	        
+        	        			<tr class="odd " valign="top">
+        			<td>
+        				<a href="http://www.intland.com/events/ccm-git-enterprises/">Webinar: Configuration & Change Management with Git for Enterprises</a><br/>
+        				<span class="subtext">--</span>
+        
+        				        			</td>
+        			</tr>
+			        			<tr class="even " valign="top">
+        			<td>
+        				<a href="http://www.intland.com/events/meet-our-experts-at-oop-2013-in-munich/">Meet our Experts at OOP 2013 in Munich</a><br/>
+        				<span class="subtext">--</span>
+        
+        				        			</td>
+        			</tr>
+			        			<tr class="odd " valign="top">
+        			<td>
+        				<a href="http://www.intland.com/events/alm-infoday-an-der-zhaw-in-winterthur-professionelle-software-entwicklung-mit-git/">ALM-InfoDay an der ZHAW in Winterthur: Professionelle Software Entwicklung mit Git</a><br/>
+        				<span class="subtext">--</span>
+        
+        				        			</td>
+        			</tr>
+			        			<tr class="even " valign="top">
+        			<td>
+        				<a href="http://www.intland.com/events/from-requirements-management-to-release-with-git-for-android-system/">Requirements Management & Git at “embedded world 2013″</a><br/>
+        				<span class="subtext">--</span>
+        
+        				        			</td>
+        			</tr>
+			        			<tr class="odd " valign="top">
+        			<td>
+        				<a href="http://www.intland.com/events/webinar-requirements-based-test-management/">Webinar: Requirements-based Test Management</a><br/>
+        				<span class="subtext">--</span>
+        
+        				        			</td>
+        			</tr>
+			        			<tr class="even " valign="top">
+        			<td>
+        				<a href="http://www.intland.com/events/webinar-scm-git-subversion/">Webinar: SCM with Git and Subversion</a><br/>
+        				<span class="subtext">--</span>
+        
+        				        			</td>
+        			</tr>
+			        			<tr class="odd " valign="top">
+        			<td>
+        				<a href="http://www.intland.com/events/alm-info-day-in-zurich-professionelle-software-entwicklung-mit-git-dvcs/">ALM-Info Day in Winterthur: Professionelle Software Entwicklung mit Git DVCS</a><br/>
+        				<span class="subtext">--</span>
+        
+        				        			</td>
+        			</tr>
+			        			<tr class="even " valign="top">
+        			<td>
+        				<a href="http://www.intland.com/events/swiss-testing-day-2013-in-zurich/">Swiss Testing Day 2013 in Zürich</a><br/>
+        				<span class="subtext">--</span>
+        
+        				        			</td>
+        			</tr>
+			        			<tr class="odd " valign="top">
+        			<td>
+        				<a href="http://www.intland.com/news/ese-kongress-2012-neueste-produktversion-des-alm-systems-%e2%80%9ecodebeamer-6-04%e2%80%9c/">ESE-Kongress 2012: Neueste Produktversion des ALM-Systems „codeBeamer 6.04“</a><br/>
+        				<span class="subtext">--</span>
+        
+        				        			</td>
+        			</tr>
+			        			<tr class="even " valign="top">
+        			<td>
+        				<a href="http://www.intland.com/news/embedded-software-engineering-kongress-2012/">Embedded Software Engineering Kongress 2012</a><br/>
+        				<span class="subtext">--</span>
+        
+        				        			</td>
+        			</tr>
+					</tbody>
+	</table>
+	</div></td>
+</tr>
+</table>
+</span></td>
+		
+	</tr>
+</table>
+	
+		</div>
+	</div>
+	<div class="ui-layout-south" style="border:0;overflow:hidden;margin-top:5px;">
+		
+<!-- Don't modify, change or delete this file without a written permission from Intland Software. -->
+
+<div id="footer" class="noPrint"  style="visibility: hidden;"  >
+	This site is powered by <a href="http://www.intland.com/products/cb/overview.html" title="About this installation">codeBeamer</a> (6.1.RC2 mysql). | <a href="https://codebeamer.com/cb/proj/wiki/displayPage.do?doc_id=12091" target="_blank" title="Report a bug or request a feature">Bug / Feature Request</a> &nbsp;| <a href="https://codebeamer.com/cb/proj/wiki/displayHomePage.do?proj_id=37" target="_blank" title="Read the official codeBeamer Knowledge Base">Knowledge Base</a>
+</div> 
+
+	<script type="text/javascript">
+	function stickFooterToBottomIfPageIsShort() {
+		var docheight = $("body").height();
+		var windowheight = $(window).height();
+		
+		var stickToBottom = docheight < windowheight; 
+		// console.log("stick to bottom: " + stickToBottom +", body-height:" + docheight +", win-height:" + windowheight);
+		$("#footer").toggleClass("stickToBottom", stickToBottom).css("visibility", "visible");		
+	};
+	$(stickFooterToBottomIfPageIsShort);
+	$(window).scroll(stickFooterToBottomIfPageIsShort).resize(stickFooterToBottomIfPageIsShort);
+	setInterval(stickFooterToBottomIfPageIsShort, 1000); // periodically update in case the document dynamically changes
+	</script>
+
+		<!-- evaluate body to get the fragment -->
+	
+	</div>
+
+	<!-- flushing out delayed scripts -->
+		
+			<!-- delayed script #1 -->
+			<form action="/cb/social/signin/facebook" method="POST" style="display:none;">
+	    <button type="submit" id="facebookLoginButton"></button>
+	    <input type="hidden" name="scope" value="email,offline_access" />	
+	</form>
+	<style type="text/css">
+		a.fb_button:hover {
+			text-decoration: none;
+		}
+	</style>
+		
+			<!-- delayed script #2 -->
+			<form action="/cb/social/signin/google" method="POST" id="googleLogin" style="display:none;">
+    <input type="hidden" name="scope" value="https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo#email https://www.google.com/m8/feeds" />
+</form>
+		
+			<!-- delayed script #3 -->
+			<script type='text/javascript'>initInlineMenu('actionMenu896388539', {context:['actionMenu896388539', 'tl', 'bl', ['beforeShow', 'windowResize']]});</script>
+		
+			<!-- delayed script #4 -->
+			<script type='text/javascript'>initTopMenu('project_browser_ToolBarItem', {context:[getToolbarTab('project_browser_ToolBarItem'), 'tl', 'bl', ['beforeShow', 'windowResize'], [0,1]], constraintoviewport:false});</script>
+		
+			<!-- delayed script #5 -->
+			<script type='text/javascript'>initPopupMenu('userEmailMenu', {});</script>
+		
+			<!-- delayed script #6 -->
+			<script type='text/javascript'>initPopupMenu('searchMenu', {submenuhidedelay :5000, keepopen:true, hidedelay:5000});</script>
+		
+			<!-- delayed script #7 -->
+			<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-8912524-2']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script');
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' :
+				'http://www') + '.google-analytics.com/ga.js';
+		ga.setAttribute('async', 'true');
+		document.documentElement.firstChild.appendChild(ga);
+	})();
+</script>
+</body>
+</html>
